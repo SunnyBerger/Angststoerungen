@@ -148,3 +148,13 @@ img{
     cursor: pointer;
 }
 
+button{
+    display: inline-block;
+    height: 20px;
+    padding: 0;
+    margin: 4px;
+    vertical-align: top;
+    width: 20px;
+    border: none;
+    background-color: #eaeaea;
+}
