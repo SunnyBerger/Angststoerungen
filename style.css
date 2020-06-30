@@ -1,12 +1,22 @@
 body{
-background-color: #eaeaea;
+background-color: #ffffff;
 }
 
 h1{
-    margin-left: 33%;
+    margin-left: 28%;
     display: inline-block;
     font-size: 60px;
-    padding-top: 10%;
+    padding-top: 3%;
+    font-family:arial; 
+}
+h2{
+    margin-left: 20%;
+    margin-right: 20%;
+    display: inline-block;
+    font-size: 20px;
+    padding-top: 0%;
+    font-family:arial; 
+    text-align: center
 }
 img{
     max-width: 100%;
@@ -14,14 +24,14 @@ img{
 }
 /*left*/
 .left-container{
-    margin-top: 70%;
+    margin-top: 70px;
     margin-left: 33%;
 }
 .carousel-container{
     width: 400px;
     height: 400px;
     margin: auto;
-    border: 5px solid black;
+    border: 0px solid black;
     position: relative;
     overflow: hidden;
 }
@@ -55,7 +65,7 @@ img{
 /*middle*/
 
 .middle-container{
-    margin-top: 70%;
+    margin-top: 70px;
     margin-left: 33%;
     
 
@@ -64,7 +74,7 @@ img{
     width: 400px;
     height: 400px;
     margin-left: 10%;
-    border: 5px solid black;
+    border: 0px solid black;
     position: relative;
     overflow: hidden;
     
@@ -98,7 +108,7 @@ img{
 /*right*/
 
 .right-container{
-    margin-top: 70%;
+    margin-top: 70px;
     margin-left: 40%;
 
 
@@ -107,7 +117,7 @@ img{
     width: 400px;
     height: 400px;
     margin-left: 10%;
-    border: 5px solid black;
+    border: 0px solid black;
     position: relative;
     overflow: hidden;
     
