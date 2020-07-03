@@ -6,18 +6,17 @@
     <title>SunnyProjekt</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="favicon.ico">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 <body>
     <h1>UNSICHTBARE ÄNGSTE</h1>
-    <h2>Asitia solupta volenis quides sit quae voluptae pliqui ulpa nam harum quo 
+    <p>Asitia solupta volenis quides sit quae voluptae pliqui ulpa nam harum quo 
         doluptatiis que reptas eatas is et ad magnimpor rem harchic ipitintiis ditas volupta atibusam qui blabo. 
-        Ut modio et, conserchic totassimet et eum quia susciendit fugiati odis aborumquid eatur as anditatio m</h2>
-    <ul>
-        <li style="float:left">
-            <div class="left-container">
+        Ut modio et, conserchic totassimet et eum quia susciendit fugiati odis aborumquid eatur as anditatio m</p>
+    <ul style="overflow: hidden;overflow-x: hidden;width: 97%">
+        <li style="float:left;padding-right: 5%;">
+                <button id="prevBtn"><i class='fas fa-arrow-up' style='font-size:25px;color:black;'></i></button>
                 <div class="carousel-container">
-                    <button id="prevBtn"><img src="./img/Pfeil1.png"></button>
-                    <button id="nextBtn"><img src="./img/Pfeil.png"></button>
                     <div class="carousel-slide">
                         <img src="./img/Titel_Links_7.jpg" id="lastClone" alt="">
                         <img src="./img/Titel_Links_.jpg" alt="">
@@ -29,14 +28,13 @@
                         <img src="./img/Titel_Links_7.jpg" alt="">
                         <img src="./img/Titel_Links_.jpg" id="firstClone" alt="">
                     </div>
-                </div>
+                    
             </div>
+            <button id="nextBtn"><i class='fas fa-arrow-down' style='font-size:25px'></i></button>
         </li>
-        <li style="float:left">
-            <div class="middle-container">
+        <li style="float:left;padding-right: 5%;">
+                <button id="middlePrevBtn"><i class='fas fa-arrow-up' style='font-size:25px;color:black;'></i></button>
                 <div class="middleCarousel-container">
-                    <button id="middlePrevBtn"><img src="./img/Pfeil1.png"></button>
-                    <button id="middleNextBtn"><img src="./img/Pfeil.png"></button>
                     <div class="middleCarousel-slide">
                         <img src="./img/Bilder_Mitte_7.jpg" id="middleLastClone" alt="">
                         <img src="./img/Bilder_Mitte_.jpg" alt="">
@@ -48,14 +46,12 @@
                         <img src="./img/Bilder_Mitte_7.jpg" alt="">
                         <img src="./img/Bilder_Mitte_.jpg" id="middleFirstClone" alt="">
                     </div>
-                </div>
             </div>
+            <button id="middleNextBtn"><i class='fas fa-arrow-down' style='font-size:25px'></i></button>
         </li>
         <li style="float:left">
-            <div class="right-container">
+                <button id="rightPrevBtn"><i class='fas fa-arrow-up' style='font-size:25px;color:black;'></i></button>
                 <div class="rightCarousel-container">
-                    <button id="rightPrevBtn"><img src="./img/Pfeil1.png"></button>
-                    <button id="rightNextBtn"><img src="./img/Pfeil.png"></button>
                     <div class="rightCarousel-slide">
                         <img src="./img/Text_Rechts_7.jpg" id="rightLastClone" alt="">
                         <img src="./img/Text_Rechts_.jpg" alt="">
@@ -67,8 +63,8 @@
                         <img src="./img/Text_Rechts_7.jpg" alt="">
                         <img src="./img/Text_Rechts_.jpg" id="rightFirstClone" alt="">
                     </div>
-                </div>
             </div>
+            <button id="rightNextBtn"><i class='fas fa-arrow-down' style='font-size:25px'></i></button>
         </li>
     </ul> 
     <script src="app.js"></script>

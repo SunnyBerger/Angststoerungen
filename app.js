@@ -3,8 +3,6 @@ const carouselImages = document.querySelectorAll('.carousel-slide img');
 
 
 
-
-
 //Buttons
 const prevBtn = document.querySelector('#prevBtn');
 const nextBtn = document.querySelector('#nextBtn');
@@ -15,24 +13,20 @@ let counter = 1;
 const size = carouselImages[0].clientWidth;
 carouselSlide.style.transform = 'translateY(' + (-size * counter ) + 'px)';
 
-
-
-
 //Button listeners
 
 nextBtn.addEventListener('click',()=>{
     if(counter >= carouselImages.length -1) return;    
     carouselSlide.style.transition = "transform 0.4s ease-in-out";
     counter ++;
-    carouselSlide.style.transform = 'translateY(' + (-size * counter) + 'px)';
-
+    carouselSlide.style.transform = 'translateY(' + (-size * counter-(5*counter)) + 'px)';
 });
 
 prevBtn.addEventListener('click',()=>{
     if(counter <= 0) return;
     carouselSlide.style.transition = "transform 0.4s ease-in-out";
     counter --;
-    carouselSlide.style.transform = 'translateY(' + (-size * counter) + 'px)';
+    carouselSlide.style.transform = 'translateY(' + (-size * counter-(5*counter)) + 'px)';
 
 });
 
@@ -41,14 +35,13 @@ carouselSlide.addEventListener('transitionend', ()=> {
     if(carouselImages[counter].id === 'lastClone'){
         carouselSlide.style.transition = "none";
         counter = carouselImages.length -2;
-        carouselSlide.style.transform = 'translateY(' + (-size * counter) + 'px)';
+        carouselSlide.style.transform = 'translateY(' + (-size * counter-(5*counter)) + 'px)';
 
     }
     if(carouselImages[counter].id === 'firstClone'){
         carouselSlide.style.transition = "none";
         counter = carouselImages.length - counter;
         carouselSlide.style.transform = 'translateY(' + (-size * counter) + 'px)';
-
     }
 });
 
@@ -83,7 +76,7 @@ middleNextBtn.addEventListener('click',()=>{
     if(middleCounter >= middleCarouselImages.length -1) return;    
     middleCarouselSlide.style.transition = "transform 0.4s ease-in-out";
     middleCounter ++;
-    middleCarouselSlide.style.transform = 'translateY(' + (-middleSize * middleCounter) + 'px)';
+    middleCarouselSlide.style.transform = 'translateY(' + (-middleSize * middleCounter-(5*middleCounter)) + 'px)';
 
 });
 
@@ -91,7 +84,7 @@ middlePrevBtn.addEventListener('click',()=>{
     if(middleCounter <= 0) return;
     middleCarouselSlide.style.transition = "transform 0.4s ease-in-out";
     middleCounter --;
-    middleCarouselSlide.style.transform = 'translateY(' + (-middleSize * middleCounter) + 'px)';
+    middleCarouselSlide.style.transform = 'translateY(' + (-middleSize * middleCounter-(5*middleCounter)) + 'px)';
 
 });
 
@@ -100,7 +93,7 @@ middleCarouselSlide.addEventListener('transitionend',()=> {
     if(middleCarouselImages[middleCounter].id === 'middleLastClone'){
         middleCarouselSlide.style.transition = "none";
         middleCounter = middleCarouselImages.length -2;
-        middleCarouselSlide.style.transform = 'translateY(' + (-middleSize * middleCounter) + 'px)';
+        middleCarouselSlide.style.transform = 'translateY(' + (-middleSize * middleCounter-(5*middleCounter)) + 'px)';
 
     }
     if(middleCarouselImages[middleCounter].id === 'middleFirstClone'){
@@ -144,7 +137,7 @@ rightNextBtn.addEventListener('click',()=>{
     if(rightCounter >= rightCarouselImages.length -1) return;    
     rightCarouselSlide.style.transition = "transform 0.4s ease-in-out";
     rightCounter ++;
-    rightCarouselSlide.style.transform = 'translateY(' + (-rightSize * rightCounter) + 'px)';
+    rightCarouselSlide.style.transform = 'translateY(' + (-rightSize * rightCounter-(5*rightCounter)) + 'px)';
 
 });
 
@@ -152,7 +145,7 @@ rightPrevBtn.addEventListener('click',()=>{
     if(rightCounter <= 0) return;
     rightCarouselSlide.style.transition = "transform 0.4s ease-in-out";
     rightCounter --;
-    rightCarouselSlide.style.transform = 'translateY(' + (-rightSize * rightCounter) + 'px)';
+    rightCarouselSlide.style.transform = 'translateY(' + (-rightSize * rightCounter-(5*rightCounter)) + 'px)';
 
 });
 
@@ -161,7 +154,7 @@ rightCarouselSlide.addEventListener('transitionend',()=> {
     if(rightCarouselImages[rightCounter].id === 'rightLastClone'){
         rightCarouselSlide.style.transition = "none";
         rightCounter = rightCarouselImages.length -2;
-        rightCarouselSlide.style.transform = 'translateY(' + (-rightSize * rightCounter) + 'px)';
+        rightCarouselSlide.style.transform = 'translateY(' + (-rightSize * rightCounter-(5*rightCounter)) + 'px)';
 
     }
     if(rightCarouselImages[rightCounter].id === 'rightFirstClone'){

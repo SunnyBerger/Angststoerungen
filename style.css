@@ -3,24 +3,21 @@ background-color: #000000;
 }
 
 h1{
-    margin-left: 28%;
+    margin-left: 35%;
     display: inline-block;
-    font-size: 60px;
-    padding-top: 3%;
+    font-size: 40px;
     font-family:arial; 
     color: #ffffff;
     
 }
-h2{
+p{
     margin-left: 20%;
     margin-right: 20%;
     display: inline-block;
-    font-size: 20px;
-    padding-top: 0%;   
+    font-size: 15px;
     font-family:arial; 
     text-align: center;
     color: #ffffff;
-    
 }
 img{
     max-width: 100%;
@@ -28,14 +25,12 @@ img{
 }
 /*left*/
 .left-container{
-    margin-top: 70px;
-    margin-left: 33%;
+    background-color: yellow;
+    position: relative;
 }
 .carousel-container{
-    width: 400px;
-    height: 400px;
-    margin: auto;
-    border: 0px solid black;
+    width: 375px;
+    height: 350px;
     position: relative;
     overflow: hidden;
 }
@@ -46,38 +41,34 @@ img{
 }
 
 #prevBtn{
-    position: absolute;
-    top: 1%;
-    z-index: 10;
-    right: 45%;
+    margin-left: 45%;
     font-size: 10px;
     color: black;
+    width: 10%;
+    height:15%;
+    border-radius: 50%;
     opacity: 0.9;
     cursor: pointer;
+}
+button:hover{
+    background-color:#ffd000;
+    
 }
 #nextBtn{
-    position: absolute;
-    top: 90%;
-    z-index: 10;
-    right: 45%;
+        z-index: 10;
+    margin-left: 45%;
     font-size: 10px;
     color: black;
+    width: 10%;
+    height:10%;
+    border-radius: 50%;
     opacity: 0.9;
     cursor: pointer;
 }
-
-/*middle*/
-
-.middle-container{
-    margin-top: 70px;
-    margin-left: 33%;
-    
-
-}
 .middleCarousel-container{
-    width: 400px;
-    height: 400px;
-    margin-left: 10%;
+    width: 375px;
+    height: 350px;
+    /* margin-left: 10%; */
     border: 0px solid black;
     position: relative;
     overflow: hidden;
@@ -89,38 +80,30 @@ img{
 }
 
 #middlePrevBtn{
-    position: absolute;
-    top: 1%;
     z-index: 10;
-    right: 45%;
+    margin-left: 45%;
     font-size: 10px;
     color: black;
+    width: 10%;
+    height:10%;
+    border-radius: 50%;
     opacity: 0.9;
     cursor: pointer;
-}
+} 
 #middleNextBtn{
-    position: absolute;
-    top: 90%;
     z-index: 10;
-    right: 45%;
+    margin-left: 45%;
     font-size: 10px;
     color: black;
+    width: 10%;
+    height:10%;
+    border-radius: 50%;
     opacity: 0.9;
     cursor: pointer;
-}
-
-/*right*/
-
-.right-container{
-    margin-top: 70px;
-    margin-left: 40%;
-
-
 }
 .rightCarousel-container{
-    width: 400px;
-    height: 400px;
-    margin-left: 10%;
+    width: 375px;
+    height: 350px;
     border: 0px solid black;
     position: relative;
     overflow: hidden;
@@ -132,33 +115,22 @@ img{
 }
 
 #rightPrevBtn{
-    position: absolute;
-    top: 1%;
-    z-index: 10;
-    right: 45%;
+    margin-left: 45%;
     font-size: 10px;
     color: black;
+    width: 10%;
+    height:10%;
+    border-radius: 50%;
     opacity: 0.9;
     cursor: pointer;
 }
 #rightNextBtn{
-    position: absolute;
-    top: 90%;
-    z-index: 10;
-    right: 45%;
+    margin-left: 45%;
     font-size: 10px;
     color: black;
+    width: 10%;
+    height:10%;
+    border-radius: 50%;
     opacity: 0.9;
     cursor: pointer;
-}
-button{
-    display: inline-block;
-    height: 20px;
-    padding: 0;
-    margin: 4px;
-    vertical-align: top;
-    width: 20px;
-    border: none;
-    background-color: #eaeaea;
-    
 }
