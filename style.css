@@ -23,6 +23,11 @@ p{
     line-height: 1.5;
     font-family: 'Roboto Condensed', sans-serif;
 }
+.test{
+   max-width: 1251px;
+   margin-left: auto;
+   margin-right: auto;
+}
 img{
     max-height: 100%;
     max-width: 100%;
