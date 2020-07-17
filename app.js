@@ -1,86 +1,167 @@
-var $ = document.querySelector.bind(document);
-var $$ = document.querySelectorAll.bind(document);
-var counter = 1;
-var color1 = "";
-var color2 = "";
-var color3 = "";
+const carouselSlide = document.querySelector('.carousel-slide');
+const carouselImages = document.querySelectorAll('.carousel-slide img');
 
 
-function slideImages(container, type, index) {
-    const carouselImages = container.querySelectorAll('.carousel-slide img');
-    const size = carouselImages[0].clientWidth;
-    container.style.transform = 'translateY(' + (-size * counter) + 'px)';
+
+//Buttons
+const prevBtn = document.querySelector('#prevBtn');
+const nextBtn = document.querySelector('#nextBtn');
 
 
-    if (type === 'prev') {
-        if (counter >= carouselImages.length - 1) return;
-        container.style.transition = "transform 0.4s ease-in-out";
-        counter++;
-        container.style.transform = 'translateY(' + (-size * counter - (5 * counter)) + 'px)';
+//counter
+let counter = 1;
+const size = carouselImages[0].clientWidth;
+carouselSlide.style.transform = 'translateY(' + (-size * counter ) + 'px)';
+
+//Button listeners
+
+nextBtn.addEventListener('click',()=>{
+    if(counter >= carouselImages.length -1) return;    
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter ++;
+    carouselSlide.style.transform = 'translateY(' + (-size * counter-(5*counter)) + 'px)';
+});
+
+prevBtn.addEventListener('click',()=>{
+    if(counter <= 0) return;
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter --;
+    carouselSlide.style.transform = 'translateY(' + (-size * counter-(5*counter)) + 'px)';
+
+});
+
+carouselSlide.addEventListener('transitionend', ()=> {
+    
+    if(carouselImages[counter].id === 'lastClone'){
+        carouselSlide.style.transition = "none";
+        counter = carouselImages.length -2;
+        carouselSlide.style.transform = 'translateY(' + (-size * counter-(5*counter)) + 'px)';
+
     }
-
-    if (type === 'next') {
-        if (counter <= 0) return;
-        container.style.transition = "transform 0.4s ease-in-out";
-        counter--;
-        container.style.transform = 'translateY(' + (-size * counter - (5 * counter)) + 'px)';
+    if(carouselImages[counter].id === 'firstClone'){
+        carouselSlide.style.transition = "none";
+        counter = carouselImages.length - counter;
+        carouselSlide.style.transform = 'translateY(' + (-size * counter) + 'px)';
     }
-
-    container.addEventListener('transitionend', () => {
-        matchColor(index);
-        if (carouselImages[counter].id === 'lastClone') {
-            container.style.transition = "none";
-            counter = carouselImages.length - 2;
-            container.style.transform = 'translateY(' + (-size * counter - (5 * counter)) + 'px)';
-
-        }
-        if (carouselImages[counter].id === 'firstClone') {
-            container.style.transition = "none";
-            counter = carouselImages.length - counter;
-            container.style.transform = 'translateY(' + (-size * counter) + 'px)';
-        }
-    });
-
-
-    function matchColor(index) {
-        var color = carouselImages[counter].getAttribute('color');
-        var innerActive = document.querySelector("#innerContainer");
-        if (index == 0) {
-            color1 = color;
-        } else if (index == 1) {
-            color2 = color;
-        } else if (index == 2) {
-            color3 = color;
-        }
-
-        if ((color1 == color2) && (color1 == color3)) {
-            innerActive.classList.add('active');
-        } else {
-            innerActive.classList.remove('active');
-        }
-    }
-}
-
-
-// Event listners 
-
-var previousButtons = $$(".prevBtn");
-previousButtons.forEach(function(prev) {
-    prev.addEventListener('click', function(e) {
-        e.preventDefault();
-        var container = this.parentElement.querySelector('.carousel-slide');
-        var index = this.parentElement.parentElement.getAttribute('data-index');
-        slideImages(container, 'prev', index);
-    });
 });
 
 
-var nextButtons = $$(".nextBtn");
-nextButtons.forEach(function(next) {
-    next.addEventListener('click', function(e) {
-        e.preventDefault();
-        var container = this.parentElement.querySelector('.carousel-slide');
-        var index = this.parentElement.parentElement.getAttribute('data-index');
-        slideImages(container, 'next', index);
-    });
+
+//2
+
+const middleCarouselSlide = document.querySelector('.middleCarousel-slide');
+const middleCarouselImages = document.querySelectorAll('.middleCarousel-slide img');
+
+
+
+
+
+//Buttons
+const middlePrevBtn = document.querySelector('#middlePrevBtn');
+const middleNextBtn = document.querySelector('#middleNextBtn');
+
+
+//middleCounter
+let middleCounter = 1;
+const middleSize = middleCarouselImages[0].clientWidth;
+
+middleCarouselSlide.style.transform = 'translateY(' + (-middleSize * middleCounter) + 'px)';
+
+
+
+
+//Button listeners
+
+middleNextBtn.addEventListener('click',()=>{
+    if(middleCounter >= middleCarouselImages.length -1) return;    
+    middleCarouselSlide.style.transition = "transform 0.4s ease-in-out";
+    middleCounter ++;
+    middleCarouselSlide.style.transform = 'translateY(' + (-middleSize * middleCounter-(5*middleCounter)) + 'px)';
+
 });
+
+middlePrevBtn.addEventListener('click',()=>{
+    if(middleCounter <= 0) return;
+    middleCarouselSlide.style.transition = "transform 0.4s ease-in-out";
+    middleCounter --;
+    middleCarouselSlide.style.transform = 'translateY(' + (-middleSize * middleCounter-(5*middleCounter)) + 'px)';
+
+});
+
+middleCarouselSlide.addEventListener('transitionend',()=> {
+    
+    if(middleCarouselImages[middleCounter].id === 'middleLastClone'){
+        middleCarouselSlide.style.transition = "none";
+        middleCounter = middleCarouselImages.length -2;
+        middleCarouselSlide.style.transform = 'translateY(' + (-middleSize * middleCounter-(5*middleCounter)) + 'px)';
+
+    }
+    if(middleCarouselImages[middleCounter].id === 'middleFirstClone'){
+        middleCarouselSlide.style.transition = "none";
+        middleCounter = middleCarouselImages.length - middleCounter;
+        middleCarouselSlide.style.transform = 'translateY(' + (-middleSize * middleCounter) + 'px)';
+
+    }
+});
+
+
+
+
+//3
+
+
+const rightCarouselSlide = document.querySelector('.rightCarousel-slide');
+const rightCarouselImages = document.querySelectorAll('.rightCarousel-slide img');
+
+
+
+
+
+//Buttons
+const rightPrevBtn = document.querySelector('#rightPrevBtn');
+const rightNextBtn = document.querySelector('#rightNextBtn');
+
+
+//rightCounter
+let rightCounter = 1;
+const rightSize = rightCarouselImages[0].clientWidth;
+
+rightCarouselSlide.style.transform = 'translateY(' + (-rightSize * rightCounter) + 'px)';
+
+
+
+
+//Button listeners
+
+rightNextBtn.addEventListener('click',()=>{
+    if(rightCounter >= rightCarouselImages.length -1) return;    
+    rightCarouselSlide.style.transition = "transform 0.4s ease-in-out";
+    rightCounter ++;
+    rightCarouselSlide.style.transform = 'translateY(' + (-rightSize * rightCounter-(5*rightCounter)) + 'px)';
+
+});
+
+rightPrevBtn.addEventListener('click',()=>{
+    if(rightCounter <= 0) return;
+    rightCarouselSlide.style.transition = "transform 0.4s ease-in-out";
+    rightCounter --;
+    rightCarouselSlide.style.transform = 'translateY(' + (-rightSize * rightCounter-(5*rightCounter)) + 'px)';
+
+});
+
+rightCarouselSlide.addEventListener('transitionend',()=> {
+    
+    if(rightCarouselImages[rightCounter].id === 'rightLastClone'){
+        rightCarouselSlide.style.transition = "none";
+        rightCounter = rightCarouselImages.length -2;
+        rightCarouselSlide.style.transform = 'translateY(' + (-rightSize * rightCounter-(5*rightCounter)) + 'px)';
+
+    }
+    if(rightCarouselImages[rightCounter].id === 'rightFirstClone'){
+        rightCarouselSlide.style.transition = "none";
+        rightCounter = rightCarouselImages.length - rightCounter;
+        rightCarouselSlide.style.transform = 'translateY(' + (-rightSize * rightCounter) + 'px)';
+
+    }
+});
+
